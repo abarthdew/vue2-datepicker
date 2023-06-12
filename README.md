@@ -1,6 +1,31 @@
 # vue-datepicker
+
+### install
+- 새 터미널 열기
+```shell
+npm install -g @vue/cli 
+```
+- 프로젝트 설치
+```shell
+vue.cmd create vue2
+vue.cmd create vue3
+```
+- npm install
+```shell
+npm install vue2-datepicker --save  # vue2
+npm install @vuepic/vue-datepicker # vue3
+```
+
 ### flat-pickr
+### `cannot use selectedYear`
 - https://www.npmjs.com/package/flatpickr
+
 ### vuejs-datepicker
 - https://codepen.io/kabanoki/pen/wQZgVe
-- https://www.npmjs.com/package/vuejs-datepicker
+- https://www.npmjs.com/package/vuejs-datepicker   
+### `vue2`
+- https://www.npmjs.com/package/vue2-datepicker
+- https://mengxiong10.github.io/vue2-datepicker/index.html#FixedTimeList
+- https://ekgoddldi.tistory.com/211   
+### `vue3`
+- https://www.npmjs.com/package/@vuepic/vue-datepicker
