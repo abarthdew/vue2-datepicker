@@ -5,7 +5,7 @@
 </template>
 
 <script>
-import DatePickerFilter from './store/datepicker/DatePickerFilter.vue';
+import DatePickerFilter from './components/DatePickerFilter.vue';
 
 export default {
   name: 'App',
