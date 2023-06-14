@@ -7,6 +7,7 @@
       :format="`YYYY-MM`"
       :range="`range`"
     />
+    <b-button variant="primary">Button</b-button>
   </div>
 </template>
 

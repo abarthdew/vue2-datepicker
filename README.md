@@ -7,13 +7,18 @@ npm install -g @vue/cli
 ```
 - 프로젝트 설치
 ```shell
-vue.cmd create vue2
-vue.cmd create vue3
+vue.cmd create vue2 # vue2
+vue.cmd create vue3 # vue3
 ```
 - npm install
 ```shell
 npm install vue2-datepicker --save  # vue2
 npm install @vuepic/vue-datepicker # vue3
+```
+
+- install ui-framework
+```shell
+npm install vue bootstrap-vue bootstrap # vue2
 ```
 
 ### flat-pickr
