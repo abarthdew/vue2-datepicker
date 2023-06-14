@@ -3,6 +3,11 @@ import App from './App.vue'
 
 Vue.config.productionTip = false
 
+// datepicker global use
+import DatePicker from 'vue2-datepicker'
+import 'vue2-datepicker/index.css';
+Vue.use(DatePicker)
+
 // store
 import store from './store'
 
