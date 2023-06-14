@@ -1,24 +1,33 @@
 # vue2
 
-## Project setup
-```
-npm install
-```
+## datepicker example
+### 1. simple date select
+- YYYY-MM-DD
+- YYYY-MM-DD HH:mm:SS
+- YYYY-MM
+- YYYY
+- HH:mm:SS
+- HH:mm [AM/PM]
 
-### Compiles and hot-reloads for development
-```
-npm run serve
-```
+### 2. value matching
+- new Date()
+- new Date(2019, 9, 9)
+- new Date(2019, 9, 9).getTime()
+- 2019-10-09
+- 09/10/2019
 
-### Compiles and minifies for production
-```
-npm run build
-```
+### 3. local setting
+- YYYY-MM-DD
+- YYYY-MM
 
-### Lints and fixes files
-```
-npm run lint
-```
+### 4. range setting
+- Date Range
+- Datetime Range
 
-### Customize configuration
-See [Configuration Reference](https://cli.vuejs.org/config/).
+### 5. select example
+- select box
+- datepicker + date foramt + control time
+- range / one date only
+- disabled before date/time
+- clearable
+
