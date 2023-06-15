@@ -1,10 +1,10 @@
 <template>
   <div id="app">
-    <simple-date-select />
-    <value-matching />
-    <local-setting />
-    <range-setting />
-    <select-example />
+    <simple-date-select @check="check" />
+    <value-matching @check="check" />
+    <local-setting @check="check" />
+    <range-setting @check="check" />
+    <select-example @check="check" />
   </div>
 </template>
 
@@ -23,6 +23,11 @@ export default {
     LocalSetting,
     RangeSetting,
     SelectExample,
+  },
+  methods: {
+    check(item) {
+      console.log(item)
+    }
   }
 }
 </script>

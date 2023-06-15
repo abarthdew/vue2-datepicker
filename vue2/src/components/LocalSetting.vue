@@ -5,17 +5,17 @@
     
     <h6>YYYY-MM-DD</h6>
     <date-picker 
-      v-model="dateSelected"
+      v-model="yyyymmdd"
     />
-    <b-button class="m-1" variant="primary" @click="check()">
+    <b-button class="m-1" variant="primary" @click="$emit('check', yyyymmdd)">
       Check
     </b-button>
     
     <h6>YYYY-MM</h6>
     <date-picker 
-      v-model="dateSelected"
+      v-model="yyyymm"
     />
-    <b-button class="m-1" variant="primary" @click="check()">
+    <b-button class="m-1" variant="primary" @click="$emit('check', yyyymm)">
       Check
     </b-button>
   
@@ -28,12 +28,8 @@ export default {
   name: 'LocalSetting',
   data() {
     return {
-      dateSelected: new Date(),
-    }
-  },
-  methods: {
-    check(item) {
-      console.log(item)
+      yyyymmdd: '',
+      yyyymm: '',
     }
   }
 }

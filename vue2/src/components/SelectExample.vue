@@ -28,7 +28,7 @@
       :format="`YYYY-MM`"
       :range="`range`"
     />
-    <b-button class="m-1" variant="primary" @click="check()">
+    <b-button class="m-1" variant="primary" @click="$emit('check', dateSelected)">
       Check
     </b-button>
   
@@ -42,11 +42,6 @@ export default {
   data() {
     return {
       dateSelected: new Date(),
-    }
-  },
-  methods: {
-    check(item) {
-      console.log(item)
     }
   }
 }

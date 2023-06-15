@@ -5,17 +5,17 @@
 
     <h6>Date Range</h6>
     <date-picker 
-      v-model="dateSelected"
+      v-model="dateRange"
     />
-    <b-button class="m-1" variant="primary" @click="check()">
+    <b-button class="m-1" variant="primary" @click="$emit('check', dateRange)">
       Check
     </b-button>
   
     <h6>Datetime Range</h6>
     <date-picker 
-      v-model="dateSelected"
+      v-model="datetimeRange"
     />
-    <b-button class="m-1" variant="primary" @click="check()">
+    <b-button class="m-1" variant="primary" @click="$emit('check', datetimeRange)">
       Check
     </b-button>
   
@@ -28,12 +28,8 @@ export default {
   name: 'RangeSetting',
   data() {
     return {
-      dateSelected: new Date(),
-    }
-  },
-  methods: {
-    check(item) {
-      console.log(item)
+      dateRange: '',
+      datetimeRange: '',
     }
   }
 }
