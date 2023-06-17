@@ -55,6 +55,7 @@
 </template>
 
 <script>
+import { mapGetters } from 'vuex'
 
 export default {
   name: 'SimpleDateSelect',
@@ -67,6 +68,17 @@ export default {
       hhmmss: '',
       hhmmampm: '',
     }
+  },
+  computed: {
+    ...mapGetters({
+      test: 'datepicker/test',
+    }),
+    // setDatepicker() {
+    //   return this.datepicker()
+    // }
+  },
+  created() {
+    console.log(this.test())
   }
 }
 </script>
