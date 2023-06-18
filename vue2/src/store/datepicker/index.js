@@ -1,7 +1,7 @@
 export default {
-  namespace: true,
+  namespaced: true,
   state: {
-    simpeDateSelect: {
+    simpleDateSelect: {
       yyyymmdd: new Date(),
       yyyymmddhhmmss: '',
       yyyymm: '',
@@ -30,9 +30,10 @@ export default {
     },
   },
   getters: {
-    test: state => {
-      console.log(state)
-      return state
+    getDatepicker: state => componentName => {
+      return state[componentName]
     }
-  }
+  },
+  mutations: {},
+  actions: {},
 }

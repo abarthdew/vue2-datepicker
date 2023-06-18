@@ -71,14 +71,11 @@ export default {
   },
   computed: {
     ...mapGetters({
-      test: 'datepicker/test',
+      getDatepicker: 'datepicker/getDatepicker',
     }),
-    // setDatepicker() {
-    //   return this.datepicker()
-    // }
+    setDatepicker() {
+      return this.getDatepicker('simpleDateSelect')
+    }
   },
-  created() {
-    console.log(this.test())
-  }
 }
 </script>
