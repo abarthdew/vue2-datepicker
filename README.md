@@ -15,10 +15,18 @@ vue.cmd create vue3 # vue3
 npm install vue2-datepicker --save  # vue2
 npm install @vuepic/vue-datepicker # vue3
 ```
-
 - install ui-framework
 ```shell
 npm install vue bootstrap-vue bootstrap # vue2
+```
+
+- install terminal-ui
+  - https://www.npmjs.com/package/vue-terminal-ui
+  - https://vuejsexamples.com/syntax-highlight-component-for-vue-termui/
+```shell
+npm i vue-terminal-ui --save # selected
+or
+npm install @vue-termui/syntax-highlight
 ```
 
 ### flat-pickr
