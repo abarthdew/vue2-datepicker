@@ -1,17 +1,17 @@
 <template>
   <div id="app">
     <div class="row">
-    <div class="col-4">
+    <div class="col">
       <simple-date-select @check="check" />
       <value-matching @check="check" />
       <local-setting @check="check" />
       <range-setting @check="check" />
     </div>
-    <div class="col-8 mt-5 pt-5">
+    <div class="col mt-5 pt-5">
       <vue-terminal 
         :intro="getIntexEsmJs"
         console-sign=""
-        height="1600px"
+        height="1610px"
         @command="false"
       />
     </div>

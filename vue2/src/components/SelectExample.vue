@@ -21,7 +21,7 @@
       <option value="11">YYYY-MM-DD HH:mm:SS[Range]</option>
       <option value="12">HH:mm:SS[Range]</option>
       <option value="13">HH:mm [AM/PM][Range]</option>
-    </select>
+    </select><br>
     <date-picker 
       v-model="dateSelected"
       :placeholder="`YYYY-MM`"
