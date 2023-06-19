@@ -23,12 +23,11 @@
       <option value="13">HH:mm [AM/PM][Range]</option>
     </select><br>
     <date-picker 
-      v-model="dateSelected"
-      :placeholder="`YYYY-MM`"
+      v-model="setDatepicker.dateSelected"
+      :placeholder="`YYYY-MM-DD`"
       :format="`YYYY-MM`"
-      :range="`range`"
     />
-    <b-button class="m-1" variant="primary" @click="$emit('check', dateSelected)">
+    <b-button class="m-1" variant="primary" @click="$emit('check', setDatepicker.dateSelected)">
       Check
     </b-button>
   
@@ -36,14 +35,18 @@
 </template>
 
 <script>
+import { mapGetters } from 'vuex'
 
 export default {
   name: 'SelectExample',
-  data() {
-    return {
-      dateSelected: new Date(),
+  computed: {
+    ...mapGetters({
+      getDatepicker: 'datepicker/getDatepicker',
+    }),
+    setDatepicker() {
+      return this.getDatepicker('selectExample')
     }
-  }
+  },
 }
 </script>
 

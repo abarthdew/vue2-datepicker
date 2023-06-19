@@ -5,17 +5,17 @@
     
     <h6>YYYY-MM-DD</h6>
     <date-picker 
-      v-model="yyyymmdd"
+      v-model="setDatepicker.yyyymmdd"
     />
-    <b-button class="m-1" variant="primary" @click="$emit('check', yyyymmdd)">
+    <b-button class="m-1" variant="primary" @click="$emit('check', setDatepicker.yyyymmdd)">
       Check
     </b-button>
     
     <h6>YYYY-MM</h6>
     <date-picker 
-      v-model="yyyymm"
+      v-model="setDatepicker.yyyymm"
     />
-    <b-button class="m-1" variant="primary" @click="$emit('check', yyyymm)">
+    <b-button class="m-1" variant="primary" @click="$emit('check', setDatepicker.yyyymm)">
       Check
     </b-button>
   
@@ -23,14 +23,17 @@
 </template>
 
 <script>
+import { mapGetters } from 'vuex'
 
 export default {
   name: 'LocalSetting',
-  data() {
-    return {
-      yyyymmdd: '',
-      yyyymm: '',
+  computed: {
+    ...mapGetters({
+      getDatepicker: 'datepicker/getDatepicker',
+    }),
+    setDatepicker() {
+      return this.getDatepicker('localSetting')
     }
-  }
+  },
 }
 </script>

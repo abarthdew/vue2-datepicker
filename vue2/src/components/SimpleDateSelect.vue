@@ -5,49 +5,49 @@
 
     <h6>YYYY-MM-DD</h6>
     <date-picker 
-      v-model="yyyymmdd"
+      v-model="setDatepicker.yyyymmdd"
     />
-    <b-button class="m-1" variant="primary" @click="$emit('check', yyyymmdd)">
+    <b-button class="m-1" variant="primary" @click="$emit('check', setDatepicker.yyyymmdd)">
       Check
     </b-button>
     
     <h6>YYYY-MM-DD HH:mm:SS</h6>
     <date-picker 
-      v-model="yyyymmddhhmmss"
+      v-model="setDatepicker.yyyymmddhhmmss"
     />
-    <b-button class="m-1" variant="primary" @click="$emit('check', yyyymmddhhmmss)">
+    <b-button class="m-1" variant="primary" @click="$emit('check', setDatepicker.yyyymmddhhmmss)">
       Check
     </b-button>
     
     <h6>YYYY-MM</h6>
     <date-picker 
-      v-model="yyyymm"
+      v-model="setDatepicker.yyyymm"
     />
-    <b-button class="m-1" variant="primary" @click="$emit('check', yyyymm)">
+    <b-button class="m-1" variant="primary" @click="$emit('check', setDatepicker.yyyymm)">
       Check
     </b-button>
     
     <h6>YYYY</h6>
     <date-picker 
-      v-model="yyyy"
+      v-model="setDatepicker.yyyy"
     />
-    <b-button class="m-1" variant="primary" @click="$emit('check', yyyy)">
+    <b-button class="m-1" variant="primary" @click="$emit('check', setDatepicker.yyyy)">
       Check
     </b-button>
     
     <h6>HH:mm:SS</h6>
     <date-picker 
-      v-model="hhmmss"
+      v-model="setDatepicker.hhmmss"
     />
-    <b-button class="m-1" variant="primary" @click="$emit('check', hhmmss)">
+    <b-button class="m-1" variant="primary" @click="$emit('check', setDatepicker.hhmmss)">
       Check
     </b-button>
     
     <h6>HH:mm [AM/PM]</h6>
     <date-picker 
-      v-model="hhmmampm"
+      v-model="setDatepicker.hhmmampm"
     />
-    <b-button class="m-1" variant="primary" @click="$emit('check', hhmmampm)">
+    <b-button class="m-1" variant="primary" @click="$emit('check', setDatepicker.hhmmampm)">
       Check
     </b-button>
   
@@ -59,16 +59,6 @@ import { mapGetters } from 'vuex'
 
 export default {
   name: 'SimpleDateSelect',
-  data() {
-    return {
-      yyyymmdd: new Date(),
-      yyyymmddhhmmss: '',
-      yyyymm: '',
-      yyyy: '',
-      hhmmss: '',
-      hhmmampm: '',
-    }
-  },
   computed: {
     ...mapGetters({
       getDatepicker: 'datepicker/getDatepicker',

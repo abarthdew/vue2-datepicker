@@ -5,52 +5,52 @@
 
     <h6>new Date()</h6>
     <date-picker 
-      v-model="newDate.basic"
+      v-model="setDatepicker.basic"
       :disabled="true"
     />
-    <b-button class="m-1" variant="primary" @click="check(newDate.basic)">
+    <b-button class="m-1" variant="primary" @click="check(setDatepicker.basic)">
       Check
     </b-button>
 
     <h6>get new Date() value as 'YYYY-MM-DD'</h6>
     <date-picker 
-      v-model="newDate.getValue"
+      v-model="setDatepicker.getValue"
       value-type="YYYY-MM-DD"
       :disabled="true"
     />
-    <b-button class="m-1" variant="primary" @click="check(newDate.getValue)">
+    <b-button class="m-1" variant="primary" @click="check(setDatepicker.getValue)">
       Check
     </b-button>
   
     <h6>new Date(2019, 9, 9)</h6>
     <date-picker 
-      v-model="newDate.setDate"
+      v-model="setDatepicker.setDate"
     />
-    <b-button class="m-1" variant="primary" @click="$emit('check', newDate.setDate)">
+    <b-button class="m-1" variant="primary" @click="$emit('check', setDatepicker.setDate)">
       Check
     </b-button>
   
     <h6>new Date(2019, 9, 9).getTime()</h6>
     <date-picker 
-      v-model="newDate.getTime"
+      v-model="setDatepicker.getTime"
     />
-    <b-button class="m-1" variant="primary" @click="$emit('check', newDate.getTime)">
+    <b-button class="m-1" variant="primary" @click="$emit('check', setDatepicker.getTime)">
       Check
     </b-button>
   
     <h6>2019-10-09</h6>
     <date-picker 
-      v-model="newDate.yyyymmdd"
+      v-model="setDatepicker.yyyymmdd"
     />
-    <b-button class="m-1" variant="primary" @click="$emit('check', newDate.yyyymmdd)">
+    <b-button class="m-1" variant="primary" @click="$emit('check', setDatepicker.yyyymmdd)">
       Check
     </b-button>
   
     <h6>09/10/2019</h6>
     <date-picker 
-      v-model="newDate.ddmmyyyy"
+      v-model="setDatepicker.ddmmyyyy"
     />
-    <b-button class="m-1" variant="primary" @click="$emit('check', newDate.ddmmyyyy)">
+    <b-button class="m-1" variant="primary" @click="$emit('check', setDatepicker.ddmmyyyy)">
       Check
     </b-button>
   
@@ -58,20 +58,17 @@
 </template>
 
 <script>
+import { mapGetters } from 'vuex'
 
 export default {
   name: 'ValueMatching',
-  data() {
-    return {
-      newDate: {
-        basic: '',
-        getValue: '',
-        setDate: '',
-        getTime: '',
-        yyyymmdd: '',
-        ddmmyyyy: '',
-      }
+  computed: {
+    ...mapGetters({
+      getDatepicker: 'datepicker/getDatepicker',
+    }),
+    setDatepicker() {
+      return this.getDatepicker('valueMatching')
     }
-  }
+  },
 }
 </script>

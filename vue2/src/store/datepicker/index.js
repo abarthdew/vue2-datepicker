@@ -1,3 +1,5 @@
+const date = new Date();
+
 export default {
   namespaced: true,
   state: {
@@ -101,31 +103,31 @@ export default {
     - }<br>
     }`,
     simpleDateSelect: {
-      yyyymmdd: new Date(),
-      yyyymmddhhmmss: '',
-      yyyymm: '',
-      yyyy: '',
-      hhmmss: '',
-      hhmmampm: '',
+      yyyymmdd: date,
+      yyyymmddhhmmss: date,
+      yyyymm: date,
+      yyyy: date,
+      hhmmss: date,
+      hhmmampm: date,
     },
     valueMatching: {
-      basic: '',
-      getValue: '',
-      setDate: '',
-      getTime: '',
-      yyyymmdd: '',
-      ddmmyyyy: '',
+      basic: date,
+      getValue: date,
+      setDate: date,
+      getTime: date,
+      yyyymmdd: date,
+      ddmmyyyy: date,
     },
     localSetting: {
-      yyyymmdd: '',
-      yyyymm: '',
+      yyyymmdd: date,
+      yyyymm: date,
     },
     rangeSetting: {
-      dateRange: '',
-      datetimeRange: '',
+      dateRange: date,
+      datetimeRange: date,
     },
     selectExample: {
-      dateSelected: new Date(),
+      dateSelected: date,
     },
   },
   getters: {
