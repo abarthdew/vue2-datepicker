@@ -15,6 +15,7 @@
       <option value="6">HH:mm:SS</option>
       <option value="7">HH:mm [AM/PM]</option>
       <option value="8">YYYY-MM-DD[Range]</option>
+      <option value="8">YYYY-MM-DD[Range/Slot]</option>
       <option value="9">YYYY-MM[Range]</option>
       <option value="10">YYYY[Range]</option>
       <option value="11">YYYY-MM-DD HH:mm:SS[Range]</option>
