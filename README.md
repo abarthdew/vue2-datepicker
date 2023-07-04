@@ -29,6 +29,12 @@ or
 npm install @vue-termui/syntax-highlight
 ```
 
+- install markdown-it
+  - https://www.npmjs.com/package/markdown-it-vue
+```shell
+$ npm install markdown-it-vue # vue2
+```
+
 ### flat-pickr
 ### `cannot use selectedYear`
 - https://www.npmjs.com/package/flatpickr

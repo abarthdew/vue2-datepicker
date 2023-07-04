@@ -1,106 +1,110 @@
 const date = new Date();
+const year = date.getFullYear();
+const month = date.getMonth() + 1;
+const date2 = date.getDate();
 
 export default {
   namespaced: true,
   state: {
     indexEsmJs:
-    `// props in [/assets/index.esm.js]<br>
-    value: {},<br>
-    valueType: {<br>
-    - type: String,<br>
-    - default: 'date' // date, format, timestamp, or token like 'YYYY-MM-DD'<br>
-    },<br>
-    type: {<br>
-    - type: String, // ['date', 'datetime', 'time', 'year', 'month', 'week']<br>
-    - default: 'date'<br>
-    },<br>
-    format: {<br>
-    - type: String<br>
-    },<br>
-    formatter: {<br>
-    - type: Object<br>
-    },<br>
-    range: {<br>
-    - type: Boolean,<br>
-    - default: false<br>
-    },<br>
-    multiple: {<br>
-    - type: Boolean,<br>
-    - default: false<br>
-    },<br>
-    rangeSeparator: {<br>
-    - type: String<br>
-    },<br>
-    lang: {<br>
-    - type: [String, Object]<br>
-    },<br>
-    placeholder: {<br>
-    - type: String,<br>
-    - default: ''<br>
-    },<br>
-    editable: {<br>
-    - type: Boolean,<br>
-    - default: true<br>
-    },<br>
-    disabled: {<br>
-    - type: Boolean,<br>
-    - default: false<br>
-    },<br>
-    clearable: {<br>
-    - type: Boolean,<br>
-    - default: true<br>
-    },<br>
-    prefixClass: {<br>
-    - type: String,<br>
-    - default: 'mx'<br>
-    },<br>
-    inputClass: {},<br>
-    inputAttr: {<br>
-    - type: Object,<br>
-    - default: function _default() {<br>
-    -   return {};<br>
-    - }<br>
-    },<br>
-    appendToBody: {<br>
-    - type: Boolean,<br>
-    - default: true<br>
-    },<br>
-    open: {<br>
-    - type: Boolean,<br>
-    - default: undefined<br>
-    },<br>
-    popupClass: {},<br>
-    popupStyle: {<br>
-    - type: Object,<br>
-    - default: function _default() {<br>
-    -   return {};<br>
-    - }<br>
-    },<br>
-    inline: {<br>
-    - type: Boolean,<br>
-    - default: false<br>
-    },<br>
-    confirm: {<br>
-    - type: Boolean,<br>
-    - default: false<br>
-    },<br>
-    confirmText: {<br>
-    - type: String,<br>
-    - default: 'OK'<br>
-    },<br>
-    renderInputText: {<br>
-    - type: Function<br>
-    },<br>
-    shortcuts: {<br>
-    - type: Array,<br>
-    - validator: function validator(value) {<br>
-    -   return Array.isArray(value) && value.every(function (v) {<br>
-    -     return isObject(v) && typeof v.text === 'string' && typeof v.onClick === 'function';<br>
-    -   });<br>
-    - },<br>
-    - default: function _default() {<br>
-    -   return [];<br>
-    - }<br>
+    "```javascript\n" +
+    `// props in [/assets/index.esm.js]
+    value: {},  
+    valueType: { // Data output type
+      type: String,  
+      default: 'date' // date, format, timestamp, or token like 'YYYY-MM-DD'  
+    },  
+    type: { // Calendar UI type
+      type: String, // ['date', 'datetime', 'time', 'year', 'month', 'week']  
+      default: 'date'  
+    },  
+    format: { // Data show type
+      type: String  
+    },  
+    formatter: {  
+      type: Object  
+    },  
+    range: {
+      type: Boolean,  
+      default: false  
+    },  
+    multiple: {  
+      type: Boolean,  
+      default: false  
+    },  
+    rangeSeparator: {  
+      type: String  
+    },  
+    lang: {  
+      type: [String, Object]  
+    },  
+    placeholder: {  
+      type: String,  
+      default: ''  
+    },  
+    editable: {  
+      type: Boolean,  
+      default: true  
+    },  
+    disabled: {  
+      type: Boolean,  
+      default: false  
+    },  
+    clearable: {  
+      type: Boolean,  
+      default: true  
+    },  
+    prefixClass: {  
+      type: String,  
+      default: 'mx'  
+    },  
+    inputClass: {},  
+    inputAttr: {  
+      type: Object,  
+      default: function _default() {  
+        return {};  
+      }  
+    },  
+    appendToBody: {  
+      type: Boolean,  
+      default: true  
+    },  
+    open: {  
+      type: Boolean,  
+      default: undefined  
+    },  
+    popupClass: {},  
+    popupStyle: {  
+      type: Object,  
+      default: function _default() {  
+        return {};  
+      }  
+    },  
+    inline: {  
+      type: Boolean,  
+      default: false  
+    },  
+    confirm: {  
+      type: Boolean,  
+      default: false  
+    },  
+    confirmText: {  
+      type: String,  
+      default: 'OK'  
+    },  
+    renderInputText: {  
+      type: Function  
+    },  
+    shortcuts: {  
+      type: Array,  
+      validator: function validator(value) {  
+        return Array.isArray(value) && value.every(function (v) {  
+          return isObject(v) && typeof v.text === 'string' && typeof v.onClick === 'function';  
+        });  
+      },  
+      default: function _default() {  
+        return [];  
+      }  
     }`,
     simpleDateSelect: {
       yyyymmdd: date,
@@ -112,19 +116,22 @@ export default {
     },
     valueMatching: {
       basic: date,
-      getValue: date,
-      setDate: date,
-      getTime: date,
-      yyyymmdd: date,
-      ddmmyyyy: date,
+      getValue: date.toISOString().split('T')[0],
+      getValueAsString: `${year}-${month >= 10 ? month : '0' + month}-${date2 >= 10 ? date2 : '0' + date2}`, // 'YYYY-MM-DD' to Stirng
+      setDate: new Date(date.getFullYear(), date.getMonth(), date.getDate()),
+      getTime: new Date(date.getFullYear(), date.getMonth(), date.getDate()).getTime(),
+      yyyymmdd: date.toLocaleString().split(',')[0],
+      ddmmyyyy: date.toLocaleDateString(),
     },
     localSetting: {
       yyyymmdd: date,
       yyyymm: date,
     },
     rangeSetting: {
-      dateRange: date,
-      datetimeRange: date,
+      dateRange: [date, date],
+      datetimeRange: [date, date],
+      datetime1: date,
+      datetime2: date,
     },
     selectExample: {
       dateSelected: date,
@@ -137,7 +144,7 @@ export default {
     },
     getDatepicker: state => componentName => {
       return state[componentName]
-    }
+    },
   },
   mutations: {},
   actions: {},

@@ -2,12 +2,11 @@
   <div>
 
     <h2>5. select example</h2>
-
-    - select box <br/>
-    - datepicker + date foramt + control time <br/>
-    - range / one date only <br/>
-    - disabled before date/time <br/>
-    - clearable <br/>
+    <h6>select box</h6>
+    <smal>- datepicker + date foramt + control time</smal><br>
+    <smal>- range / one date only</smal><br>
+    <smal>- disabled before date/time</smal><br>
+    <smal>- clearable</smal><br>
     <select class="form-select" aria-label="Default select example">
       <option value="1" selected>YYYY-MM-DD</option>
       <option value="2">YYYY-MM</option>
