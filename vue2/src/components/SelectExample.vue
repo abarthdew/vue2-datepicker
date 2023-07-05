@@ -3,25 +3,12 @@
 
     <h2>5. select example</h2>
     <h6>select box</h6>
-    <smal>- datepicker + date foramt + control time</smal><br>
-    <smal>- range / one date only</smal><br>
-    <smal>- disabled before date/time</smal><br>
-    <smal>- clearable</smal><br>
-    <select class="form-select" aria-label="Default select example">
-      <option value="1" selected>YYYY-MM-DD</option>
-      <option value="2">YYYY-MM</option>
-      <option value="4">YYYY</option>
-      <option value="5">YYYY-MM-DD HH:mm:SS</option>
-      <option value="6">HH:mm:SS</option>
-      <option value="7">HH:mm [AM/PM]</option>
-      <option value="8">YYYY-MM-DD[Range]</option>
-      <option value="8">YYYY-MM-DD[Range/Slot]</option>
-      <option value="9">YYYY-MM[Range]</option>
-      <option value="10">YYYY[Range]</option>
-      <option value="11">YYYY-MM-DD HH:mm:SS[Range]</option>
-      <option value="12">HH:mm:SS[Range]</option>
-      <option value="13">HH:mm [AM/PM][Range]</option>
-    </select><br>
+    <small>- datepicker + date foramt + control time</small><br>
+    <small>- range / one date only</small><br>
+    <small>- disabled before date/time</small><br>
+    <small>- clearable</small><br>
+    <v-select
+    ></v-select><br>
     <date-picker 
       v-model="setDatepicker.dateSelected"
       :placeholder="`YYYY-MM-DD`"
@@ -36,16 +23,21 @@
 
 <script>
 import { mapGetters } from 'vuex'
+import vSelect from 'vue-select'
+import "vue-select/dist/vue-select.css"
 
 export default {
   name: 'SelectExample',
+  components: {
+    vSelect
+  },
   computed: {
     ...mapGetters({
       getDatepicker: 'datepicker/getDatepicker',
     }),
     setDatepicker() {
       return this.getDatepicker('selectExample')
-    }
+    },
   },
 }
 </script>
