@@ -1,7 +1,7 @@
 <template>
   <div>
 
-    <h2>4. Range Setting</h2>
+    <h2>4. range setting</h2>
 
     <h6>Date Range</h6>
     <date-picker 

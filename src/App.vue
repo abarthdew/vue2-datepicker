@@ -45,4 +45,5 @@ export default {
 }
 h2 { padding-top: 30px; }
 h6 { padding-top: 15px; }
+h6:before { content: "📌 "; }
 </style>

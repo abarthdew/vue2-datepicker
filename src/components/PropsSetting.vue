@@ -1,7 +1,7 @@
 <template>
   <div>
 
-    <h2>6. PropsSetting</h2>
+    <h2>6. props setting</h2>
     
     <h6>props in `/assets/index.esm.js`</h6>
     
