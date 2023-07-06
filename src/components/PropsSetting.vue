@@ -7,7 +7,7 @@
     
     <markdown-it-vue
       class="md-body"
-      style="height: 1560px; overflow-y: scroll;"
+      style="height: 500px; overflow-y: scroll;"
       :content="getIntexEsmJs"
       :options="options"
     />
