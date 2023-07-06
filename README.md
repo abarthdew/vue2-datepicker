@@ -1,4 +1,4 @@
-# vue-datepicker
+# vue2-datepicker
 
 ### install
 - 새 터미널 열기
@@ -42,16 +42,17 @@ $ npm install markdown-it-vue # vue2
 $ npm install vue-select # vue2
 ```
 
-### flat-pickr
+## flat-pickr
 ### `cannot use selectedYear`
 - https://www.npmjs.com/package/flatpickr
 
-### vuejs-datepicker
+## vuejs-datepicker
 - https://codepen.io/kabanoki/pen/wQZgVe
 - https://www.npmjs.com/package/vuejs-datepicker   
 ### `vue2`
 - https://www.npmjs.com/package/vue2-datepicker
 - https://mengxiong10.github.io/vue2-datepicker/index.html#FixedTimeList
 - https://ekgoddldi.tistory.com/211   
+- https://hjh0827.tistory.com/72   
 ### `vue3`
 - https://www.npmjs.com/package/@vuepic/vue-datepicker
