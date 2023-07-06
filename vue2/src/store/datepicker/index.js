@@ -9,7 +9,7 @@ export default {
   state: {
     indexEsmJs:
     "```javascript\n" +
-    `// props in [/assets/index.esm.js]
+    `
     value: {},  
     valueType: { // Data output type
       type: String,  
@@ -123,6 +123,9 @@ export default {
       getTime: new Date(date.getFullYear(), date.getMonth(), date.getDate()).getTime(),
       yyyymmdd: date.toLocaleString().split(',')[0],
       ddmmyyyy: date.toLocaleDateString(),
+      yyyymm: date,
+      yyyyrange: ['2012', '2013'],
+      yyyymmddhhmmssrange: ['2023-07-27 12:00:00', '2023-07-27 12:00:00'],
     },
     localSetting: {
       yyyymmdd: date,
@@ -135,113 +138,119 @@ export default {
       datetime2: date,
     },
     selectExample: {
-      dateSelected: date,
-      item: [
-        {
-          option: 'YYYY-MM-DD',
+      lang: {
+        days: ['일', '월', '화', '수', '목', '금', '토'],
+        months: ['1월','2월','3월','4월','5월','6월','7월','8월','9월','10월','11월','12월'],
+        yearFormat: 'YYYY년',
+        monthFormat: 'MM월',
+        monthBeforeYear: false,
+      },
+      item: {
+        yyyymmdd: {
+          text: 'YYYY-MM-DD',
           dateSelected: dateSelected,
           format: 'YYYY-MM-DD',
           valueType: 'YYYY-MM-DD',
           type: 'date',
           range: false,
         },
-        {
-          option: 'YYYY-MM',
+        yyyymm: {
+          text: 'YYYY-MM',
           dateSelected: dateSelected,
           format: 'YYYY-MM',
           valueType: 'YYYY-MM',
           type: 'month',
           range: false,
         },
-        {
-          option: 'YYYY',
+        yyyy: {
+          text: 'YYYY',
           dateSelected: dateSelected,
           format: 'YYYY',
           valueType: 'YYYY',
           type: 'year',
           range: false,
         },
-        {
-          option: 'YYYY-MM-DD HH:mm:SS',
-          dateSelected: dateSelected,
-          format: 'YYYY-MM hh:mm:ss',
-          valueType: 'YYYY-MM hh:mm:ss',
+        yyyymmddhhmmss: {
+          text: 'YYYY-MM-DD HH:mm:SS',
+          dateSelected: date,
+          format: 'YYYY-MM-DD hh:mm:ss',
+          valueType: 'YYYY-MM-DD hh:mm:ss',
           type: 'datetime',
           range: false,
         },
-        {
-          option: 'HH:mm:SS',
-          dateSelected: dateSelected,
+        hhmmss: {
+          text: 'HH:mm:SS',
+          dateSelected: date,
           format: 'hh:mm:ss',
           valueType: 'hh:mm:ss',
           type: 'time',
           range: false,
         },
-        {
-          option: 'HH:mm [AM/PM]',
-          dateSelected: dateSelected,
+        hhmmampm: {
+          text: 'HH:mm [AM/PM]',
+          dateSelected: date,
           format: 'hh:mm a',
           valueType: 'hh:mm a',
           type: 'time',
           range: false,
         },
-        {
-          option: 'YYYY-MM-DD[Range]',
+        yyyymmddrange: {
+          text: 'YYYY-MM-DD[Range]',
           dateSelected: [dateSelected, dateSelected],
           format: 'YYYY-MM-DD',
           valueType: 'YYYY-MM-DD',
           type: 'date',
           range: true,
         },
-        {
-          option: 'YYYY-MM-DD[Range/Slot]',
+        yyyymmddrangeslot: {
+          text: 'YYYY-MM-DD[Range/Slot]',
           dateSelected: [dateSelected, dateSelected],
           format: 'YYYY-MM-DD',
           valueType: 'YYYY-MM-DD',
           type: 'date',
           range: true,
         },
-        {
-          option: 'YYYY-MM[Range]',
+        yyyymmrange: {
+          text: 'YYYY-MM[Range]',
           dateSelected: [dateSelected, dateSelected],
           format: 'YYYY-MM',
           valueType: 'YYYY-MM',
           type: 'month',
           range: true,
         },
-        {
-          option: 'YYYY[Range]',
+        yyyyrange: {
+          text: 'YYYY[Range]',
           dateSelected: [dateSelected, dateSelected],
           format: 'YYYY',
           valueType: 'YYYY',
           type: 'year',
           range: true,
         },
-        {
-          option: 'YYYY-MM-DD HH:mm:SS[Range]',
-          dateSelected: [dateSelected, dateSelected],
+        yyyymmddhhmmssrange: {
+          text: 'YYYY-MM-DD HH:mm:SS[Range]',
+          dateSelected: [date, date],
           format: 'YYYY-MM-DD hh:mm:ss',
           valueType: 'YYYY-MM-DD hh:mm:ss',
           type: 'datetime',
           range: true,
         },
-        {
-          option: 'HH:mm:SS[Range]',
-          dateSelected: [dateSelected, dateSelected],
+        hhmmssrange: {
+          text: 'HH:mm:SS[Range]',
+          dateSelected: [date, date],
           format: 'hh:mm:ss',
           valueType: 'hh:mm:ss',
           type: 'time',
           range: true,
         },
-        {
-          option: 'HH:mm [AM/PM][Range]',
-          dateSelected: [dateSelected, dateSelected],
+        hhmmampmrange: {
+          text: 'HH:mm [AM/PM][Range]',
+          dateSelected: [date, date],
           format: 'hh:mm a',
           valueType: 'hh:mm a',
           type: 'time',
           range: true,
-        }
-      ],
+        },
+      }
     },
   },
   getters: {
@@ -252,6 +261,15 @@ export default {
     getDatepicker: state => componentName => {
       return state[componentName]
     },
+    getDateOptions: state => {
+      const { selectExample } = state
+      const keyList = Object.keys(selectExample.item)
+      const itemArray = [];
+      for (let i=0; i<keyList.length; i++) {
+        itemArray.push(selectExample.item[keyList[i]])
+      }
+      return itemArray;
+    }
   },
   mutations: {},
   actions: {},

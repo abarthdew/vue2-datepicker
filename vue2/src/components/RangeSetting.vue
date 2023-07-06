@@ -62,9 +62,6 @@
       :disabled-date="notBeforeTodayWeek"
       :disabled-time="notBeforeTime2"
     />
-    <b-button class="m-1" variant="primary" @click="$emit('check', setDatepicker.datetime)">
-      Check
-    </b-button>
   
   </div>
 </template>

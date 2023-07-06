@@ -37,6 +37,7 @@ $ npm install markdown-it-vue # vue2
 
 - install v-select
   - https://www.npmjs.com/package/vue-select
+  - https://stackoverflow.com/questions/51392719/set-initial-vuetify-v-select-value
 ```shell
 $ npm install vue-select # vue2
 ```
