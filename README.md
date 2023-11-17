@@ -1,6 +1,7 @@
 # vue2-datepicker
 
 ### install
+
 - 새 터미널 열기
 ```shell
 npm install -g @vue/cli 
